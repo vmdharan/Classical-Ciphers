@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Classical_Ciphers"
         mc:Ignorable="d"
-        Title="Classical-Ciphers" Height="350" Width="525">
+        Title="Classical-Ciphers" Height="180" Width="320" ResizeMode="NoResize">
     <Grid>
-        
+        <TextBox x:Name="tbPickedFile" HorizontalAlignment="Left" Height="23" Margin="73,20,0,0" TextWrapping="Wrap" Text="Select file" VerticalAlignment="Top" Width="220" IsEnabled="False"/>
+        <Button x:Name="btnSelectFile" Content="Browse..." HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="58" Click="btnSelectFile_Click"/>
+        <Button x:Name="btnEncode" Content="Encode" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDecode" Content="Decode" HorizontalAlignment="Left" Margin="218,101,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblFileSize" Content="File size (in bytes):" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblFileSizeBytes" Content="" HorizontalAlignment="Left" Margin="120,55,0,0" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>
