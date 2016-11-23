@@ -62,5 +62,25 @@ namespace Classical_Ciphers
                 MessageBox.Show(ex1.Message);
             }
         }
+
+        private void btnEncode_Click(object sender, RoutedEventArgs e)
+        {
+            if(int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
+            {
+                Caesar cipher1 = new Caesar();
+                cipher1.encode(inputData);
+                File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher1.data);
+            }
+        }
+
+        private void btnDecode_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
+            {
+                Caesar cipher1 = new Caesar();
+                cipher1.decode(inputData);
+                File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher1.data);
+            }
+        }
     }
 }
