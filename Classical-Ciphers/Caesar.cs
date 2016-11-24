@@ -10,7 +10,7 @@ namespace Classical_Ciphers
     class Caesar
     {
         // Default shift value for the Caesar Cipher.
-        private int shiftValue = 3;
+        protected int shiftValue = 3;
 
         // Processed data.
         public byte[] data;
@@ -105,7 +105,7 @@ namespace Classical_Ciphers
                 if (charCase == 1)
                 {
                     newChar = c - shiftValue;
-                    if (newChar > 90)
+                    if (newChar < 65)
                     {
                         newChar += 26;
                     }
@@ -114,7 +114,7 @@ namespace Classical_Ciphers
                 else if (charCase == 2)
                 {
                     newChar = c - shiftValue;
-                    if (newChar > 122)
+                    if (newChar < 97)
                     {
                         newChar += 26;
                     }

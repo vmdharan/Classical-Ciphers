@@ -67,9 +67,10 @@ namespace Classical_Ciphers
         {
             if(int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
             {
-                Caesar cipher1 = new Caesar();
-                cipher1.encode(inputData);
-                File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher1.data);
+                //encodeCaesar();
+                ROT13 cipher2 = new ROT13();
+                cipher2.encode(inputData);
+                File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher2.data);
             }
         }
 
@@ -77,10 +78,25 @@ namespace Classical_Ciphers
         {
             if (int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
             {
-                Caesar cipher1 = new Caesar();
-                cipher1.decode(inputData);
-                File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher1.data);
+                //decodeCaesar();
+                ROT13 cipher2 = new ROT13();
+                cipher2.decode(inputData);
+                File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher2.data);
             }
+        }
+
+        private void encodeCaesar()
+        {
+            Caesar cipher1 = new Caesar();
+            cipher1.encode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher1.data);
+        }
+
+        private void decodeCaesar()
+        {
+            Caesar cipher1 = new Caesar();
+            cipher1.decode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher1.data);
         }
     }
 }
