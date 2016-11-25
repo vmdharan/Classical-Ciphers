@@ -68,9 +68,8 @@ namespace Classical_Ciphers
             if(int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
             {
                 //encodeCaesar();
-                ROT13 cipher2 = new ROT13();
-                cipher2.encode(inputData);
-                File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher2.data);
+                //encodeROT13();
+                encodeAtbash();
             }
         }
 
@@ -79,10 +78,37 @@ namespace Classical_Ciphers
             if (int.Parse(lblFileSizeBytes.Content.ToString()) > 0)
             {
                 //decodeCaesar();
-                ROT13 cipher2 = new ROT13();
-                cipher2.decode(inputData);
-                File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher2.data);
+                //decodeROT13();
+                decodeAtbash();
             }
+        }
+
+        private void encodeAtbash()
+        {
+            Atbash cipher3 = new Atbash();
+            cipher3.encode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher3.data);
+        }
+
+        private void decodeAtbash()
+        {
+            Atbash cipher3 = new Atbash();
+            cipher3.decode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher3.data);
+        }
+
+        private void encodeROT13()
+        {
+            ROT13 cipher2 = new ROT13();
+            cipher2.encode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".enc", cipher2.data);
+        }
+
+        private void decodeROT13()
+        {
+            ROT13 cipher2 = new ROT13();
+            cipher2.decode(inputData);
+            File.WriteAllBytes(tbPickedFile.Text + ".dec", cipher2.data);
         }
 
         private void encodeCaesar()
